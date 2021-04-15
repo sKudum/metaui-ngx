@@ -1,7 +1,5 @@
-import {Compiler, Component, ComponentFactoryResolver, ComponentRef, Injector, OnInit, Renderer2, ViewContainerRef} from '@angular/core';
+import {Compiler, Component, ComponentFactoryResolver, Injector, OnInit, Renderer2, ViewContainerRef} from '@angular/core';
 import {MyButtonComponent} from './button/my-button.component';
-import {ComplexComponentComponent} from './complex-component/complex-component.component';
-import {ComplexComponentModule} from './complex-component/complex-component.module';
 
 @Component({
   selector: 'app-root',

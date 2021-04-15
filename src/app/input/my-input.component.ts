@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Component, OnInit, ViewContainerRef, Injector, ComponentFactoryResolver, Renderer2, Compiler, ComponentRef, ViewChild} from '@angular/core';
-import { InputGroupComponent, InputGroupModule  } from '@fundamental-ngx/core';
+import { InputComponent, PlatformInputModule  } from '@fundamental-ngx/platform';
 
 @Component({
   selector: 'app-input',
@@ -7,7 +7,7 @@ import { InputGroupComponent, InputGroupModule  } from '@fundamental-ngx/core';
 })
 export class MyInputComponent implements OnInit {
 
-  @ViewChild(InputGroupComponent, {static: true}) myinput: InputGroupComponent;
+  @ViewChild(InputComponent, {static: true}) myinput: InputComponent;
 
 
   constructor(private viewContainer: ViewContainerRef, private crf: ComponentFactoryResolver,
@@ -15,14 +15,15 @@ export class MyInputComponent implements OnInit {
 }
 
   ngOnInit(): void {
-    const module = this.compiler.compileModuleAndAllComponentsSync(InputGroupModule);
+    const module = this.compiler.compileModuleAndAllComponentsSync(PlatformInputModule);
     const moduleNgModuleRef = module.ngModuleFactory.create(this.injector);
     console.log(module.componentFactories);
     const cmdFactory = module.componentFactories[0];
-    const component: ComponentRef<InputGroupComponent> = this.viewContainer.createComponent(cmdFactory, null,
+    const component: ComponentRef<InputComponent> = this.viewContainer.createComponent(cmdFactory, null,
       this.injector, [[]], moduleNgModuleRef);
 
-      component.instance.addOnText = "'$'" ;
-      component.instance.placeholder = "'Amount'";
+      component.instance.name="input4";
+      component.instance.type="text";
+      component.instance.contentDensity="compact";
   }
 }
