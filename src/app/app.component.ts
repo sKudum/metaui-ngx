@@ -7,7 +7,7 @@ import {MyButtonComponent} from './button/my-button.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'projected-content-test';
+  title = 'metaui-ngx';
 
 
   constructor(private viewContainer: ViewContainerRef, private crf: ComponentFactoryResolver,

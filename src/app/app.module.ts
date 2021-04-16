@@ -1,13 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {MyButtonComponent} from './button/my-button.component';
-import {MyInputComponent} from './input/my-input.component';
-import {MyCheckboxComponent} from './checkbox/checkbox.component';
-import {MyComboboxComponent} from './combobox/combobox.component';
-import {MyTextAreaComponent} from './text-area/my-text-area.component';
-import {MyTimePickerComponent} from './time-picker/my-time-picker.component';
 import {PlatformButtonModule,
   ButtonComponent,
   PlatformCheckboxModule,
@@ -18,9 +11,36 @@ import {PlatformButtonModule,
   TextAreaComponent,
   FdpFormGroupModule,
   PlatformTimePickerModule,
-  PlatformTimePickerComponent
+  PlatformTimePickerComponent,
+  NumberStepInputComponent,
+  PlatformStepInputModule,
+  PlatformSwitchModule,
+  SwitchComponent,
+  PlatformSelectModule,
+  SelectComponent,
+  PlatformDatePickerModule,
+  PlatformDatePickerComponent,
+  PlatformDatetimePickerModule,
+  PlatformDatetimePickerComponent
 } from '@fundamental-ngx/platform';
-import { InputGroupComponent, FormModule,InputGroupModule, RtlService, ButtonModule,TimePickerModule  } from '@fundamental-ngx/core';
+import { InputGroupComponent,
+         FormModule,
+         InputGroupModule,
+         RtlService,
+         ButtonModule } from '@fundamental-ngx/core';
+
+import {AppComponent} from './app.component';
+import {MyButtonComponent} from './button/my-button.component';
+import {MyInputComponent} from './input/my-input.component';
+import {MyCheckboxComponent} from './checkbox/checkbox.component';
+import {MyComboboxComponent} from './combobox/combobox.component';
+import {MyTextAreaComponent} from './text-area/my-text-area.component';
+import {MyTimePickerComponent} from './time-picker/my-time-picker.component';
+import {MyStepInputComponent} from './stepInput/stepInput.component';
+import {MySwitchComponent} from './switch/switch.component';
+import {MySelectComponent} from './select/select.component';
+import {MyDatePickerComponent } from './date-picker/my-date-picker.component';
+import {MyDateTimePickerComponent } from './date-time-picker/my-date-time-picker.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +50,12 @@ import { InputGroupComponent, FormModule,InputGroupModule, RtlService, ButtonMod
     MyCheckboxComponent,
     MyComboboxComponent,
     MyTextAreaComponent,
-    MyTimePickerComponent
+    MyTimePickerComponent,
+    MyStepInputComponent,
+    MySwitchComponent,
+    MySelectComponent,
+    MyDatePickerComponent,
+    MyDateTimePickerComponent
   ],
   exports:[
     PlatformButtonModule,
@@ -40,7 +65,12 @@ import { InputGroupComponent, FormModule,InputGroupModule, RtlService, ButtonMod
     CheckboxComponent,
     ComboboxComponent,
     TextAreaComponent,
-    PlatformTimePickerComponent
+    PlatformTimePickerComponent,
+    NumberStepInputComponent,
+    SwitchComponent,
+    SelectComponent,
+    PlatformDatePickerComponent,
+    PlatformDatetimePickerComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +83,12 @@ import { InputGroupComponent, FormModule,InputGroupModule, RtlService, ButtonMod
     FdpFormGroupModule,
     PlatformTimePickerModule,
     ButtonModule,
-    TimePickerModule
+    PlatformStepInputModule,
+    PlatformSwitchModule,
+    PlatformSelectModule,
+    PlatformDatePickerModule,
+    PlatformDatetimePickerModule
+
   ],
   providers: [RtlService],
   bootstrap: [AppComponent]
