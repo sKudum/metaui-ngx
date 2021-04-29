@@ -56,6 +56,6 @@ select: SelectComponent;
     component.instance.width = "7rem";
     component.instance.name = "field";
     component.instance.placeholder="Select an option";
-    component.instance.value="selectedItem";
+    component.instance.list=this.fromData;
   }
 }

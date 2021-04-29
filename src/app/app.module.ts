@@ -21,13 +21,25 @@ import {PlatformButtonModule,
   PlatformDatePickerModule,
   PlatformDatePickerComponent,
   PlatformDatetimePickerModule,
-  PlatformDatetimePickerComponent
+  PlatformDatetimePickerComponent,
+  PlatformCheckboxGroupModule,
+  CheckboxGroupComponent,
+  PlatformMultiInputModule,
+  PlatformMultiInputComponent,
+  PlatformSearchFieldModule,
+  SearchFieldComponent,
+  PlatformObjectMarkerModule,
+  PlatformObjectMarkerComponent,
+  PlatformFeedInputModule,
+  FeedInputComponent
 } from '@fundamental-ngx/platform';
 import { InputGroupComponent,
          FormModule,
          InputGroupModule,
          RtlService,
-         ButtonModule } from '@fundamental-ngx/core';
+         ButtonModule,
+         IconModule,
+         ObjectNumberModule, ObjectNumberComponent} from '@fundamental-ngx/core';
 
 import {AppComponent} from './app.component';
 import {MyButtonComponent} from './button/my-button.component';
@@ -41,6 +53,16 @@ import {MySwitchComponent} from './switch/switch.component';
 import {MySelectComponent} from './select/select.component';
 import {MyDatePickerComponent } from './date-picker/my-date-picker.component';
 import {MyDateTimePickerComponent } from './date-time-picker/my-date-time-picker.component';
+import {MyCheckboxGroupComponent } from './checkbox-group/checkbox-group.component';
+import {MyInputGroupComponent} from './input-group/my-input-group.component';
+import {MyMultiInputComponent} from './multi-input/my-multi-input.component';
+import {MySearchFieldComponent} from './search-field/search-field.component';
+import {MyObjectMarkerComponent} from './object-marker/my-object-marker.component';
+import {MyObjectNumberComponent} from './object-number/my-object-number.component';
+import {MyFeedInputComponent} from './feed-input/feed-input.component';
+import {AbstractedInputGroupComponentModule } from './abstracted-input-group/abstracted-input-group.component.module';
+import {BindingValueFactory } from './services/binding-factory.service';
+import {RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -55,7 +77,14 @@ import {MyDateTimePickerComponent } from './date-time-picker/my-date-time-picker
     MySwitchComponent,
     MySelectComponent,
     MyDatePickerComponent,
-    MyDateTimePickerComponent
+    MyDateTimePickerComponent,
+    MyCheckboxGroupComponent,
+    MyInputGroupComponent,
+    MyMultiInputComponent,
+    MySearchFieldComponent,
+    MyObjectMarkerComponent,
+    MyObjectNumberComponent,
+    MyFeedInputComponent
   ],
   exports:[
     PlatformButtonModule,
@@ -70,7 +99,13 @@ import {MyDateTimePickerComponent } from './date-time-picker/my-date-time-picker
     SwitchComponent,
     SelectComponent,
     PlatformDatePickerComponent,
-    PlatformDatetimePickerComponent
+    PlatformDatetimePickerComponent,
+    CheckboxGroupComponent,
+    PlatformMultiInputComponent,
+  SearchFieldComponent,
+   PlatformObjectMarkerComponent,
+   ObjectNumberComponent,
+  FeedInputComponent
   ],
   imports: [
     BrowserModule,
@@ -87,10 +122,18 @@ import {MyDateTimePickerComponent } from './date-time-picker/my-date-time-picker
     PlatformSwitchModule,
     PlatformSelectModule,
     PlatformDatePickerModule,
-    PlatformDatetimePickerModule
-
+    PlatformDatetimePickerModule,
+    PlatformCheckboxGroupModule,
+    IconModule,
+    AbstractedInputGroupComponentModule,
+    PlatformMultiInputModule,
+    PlatformSearchFieldModule,
+    PlatformObjectMarkerModule,
+    ObjectNumberModule,
+    RouterModule.forRoot([]),
+   PlatformFeedInputModule
   ],
-  providers: [RtlService],
+  providers: [RtlService,BindingValueFactory],
   bootstrap: [AppComponent]
 })
 export class AppModule {

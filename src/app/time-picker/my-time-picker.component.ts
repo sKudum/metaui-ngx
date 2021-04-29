@@ -8,7 +8,7 @@ import {ChangeDetectorRef,
         Compiler,
         ComponentRef,
         ViewChild } from '@angular/core';
-
+        
 import { PlatformTimePickerModule,
   PlatformTimePickerComponent} from '@fundamental-ngx/platform';
 import { RtlService, DatetimeAdapter, DATE_TIME_FORMATS, FdDate, FdDatetimeAdapter, FD_DATETIME_FORMATS } from '@fundamental-ngx/core';

@@ -1,0 +1,29 @@
+Checkbox Group:
+<!-- <fdp-form-group [formGroup]="form1">
+  <fdp-form-field #fl1 id="seasons" name="seasons" label="My favorite Seasons: " rank="1">
+    <ng-template #name></ng-template>
+  </fdp-form-field>
+</fdp-form-group> -->
+
+
+<fdp-form-group #fg [formGroup]="form1">
+
+
+  <ng-container *ngTemplateOutlet="fields;context:{$implicit: fg}">
+  </ng-container>
+</fdp-form-group>
+
+
+<ng-template #fields let-fg>
+
+  <fdp-form-field #ff
+    [formGroupContainer]="fg"
+    label="Default Input Field"
+    id="input1"
+    name="input1"
+    rank="1"
+    placeholder="Field placeholder text">
+
+    <app-render [parent]="ff"></app-render>
+  </fdp-form-field>
+</ng-template>
